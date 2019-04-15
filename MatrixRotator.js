@@ -44,7 +44,5 @@ module.exports = class MatrixRotator {
     }
 
     this.matrix = newArray;
-
-    // must be a valid Direction, see Direction.js
   }
 };
