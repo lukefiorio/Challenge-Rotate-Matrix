@@ -18,8 +18,6 @@ module.exports = class MatrixRotator {
   //      |-- Must be Direction.CW
   //      v        or Direction.CCW
   rotate(direction) {
-    // do work here
-
     // make a dummy array to accept the rotated matrix values
     // make copy in a new object (rather than pointer to same object)
     let newArray = [];
