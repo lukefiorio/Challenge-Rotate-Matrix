@@ -21,14 +21,10 @@ module.exports = class MatrixRotator {
     // do work here
 
     // make a dummy array to accept the rotated matrix values
-    // cannot make a copy of starting array because changes to either array will affect BOTH arrays
+    // make copy in a new object (rather than pointer to same object)
     let newArray = [];
     for (let row = 0; row < this.matrix.length; row++) {
-      let subArray = [];
-      for (let col = 0; col < this.matrix[0].length; col++) {
-        subArray.push(0);
-      }
-      newArray.push(subArray);
+      newArray[row] = this.matrix[row].slice();
     }
 
     if (direction === 'ClockWise') {
@@ -50,7 +46,6 @@ module.exports = class MatrixRotator {
     }
 
     this.matrix = newArray;
-    return this.matrix;
 
     // must be a valid Direction, see Direction.js
   }
